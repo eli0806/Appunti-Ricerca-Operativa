@@ -1,0 +1,211 @@
+{
+  "main": {
+    "id": "1bd2081fdbc46ec2",
+    "type": "split",
+    "children": [
+      {
+        "id": "2c4261a759b6d3a7",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "80bff794f1a6b678",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "Nuova scheda"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "0c463d2363502534",
+    "type": "split",
+    "children": [
+      {
+        "id": "7c3c70452151e536",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "77ce71ed579c074c",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Esplora file"
+            }
+          },
+          {
+            "id": "ce22f1502eda64ce",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "48d2fdeb93dded1c",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "facc798b1b54ef8e",
+    "type": "split",
+    "children": [
+      {
+        "id": "e144fe4f7969e809",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "bd5b73e3eafe5e3e",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "PL/Definizioni.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks"
+            }
+          },
+          {
+            "id": "bfd269c9a770ea7c",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "PL/Definizioni.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links"
+            }
+          },
+          {
+            "id": "c46c7d63a03db20c",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "1cf17ea4b4f86377",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          },
+          {
+            "id": "086f53654ea962b1",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "PL/Definizioni.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Apri selettore rapido": false,
+      "graph:Apri vista grafo": false,
+      "canvas:Crea nuova lavagna": false,
+      "daily-notes:Apri nota giornaliera": false,
+      "templates:Inserisci modello": false,
+      "command-palette:Apri riquadro comandi": false,
+      "bases:Crea nuova Base": false,
+      "obsidian-excalidraw-plugin:New drawing": false
+    }
+  },
+  "active": "80bff794f1a6b678",
+  "lastOpenFiles": [
+    "PLI/Altre cose importanti.md",
+    "Cose da sapere all'orale.md",
+    "PLI/Algoritmi di risoluzione dei problemi.md",
+    "PLI/Teoremi.md",
+    "Excalidraw/Schema branch and bound.md",
+    "Immagini/Schema branch and bound.png",
+    "Immagini",
+    "Nuova cartella",
+    "Excalidraw",
+    "PLI/Definizioni.md",
+    "PLI/Problemi.md",
+    "Senza nome.canvas",
+    "PL/Altre cose importanti.md",
+    "PL/Definizioni.md",
+    "PL/Matlab.md",
+    "PL/Problemi.md",
+    "PL/Teoremi.md",
+    "PL/Algoritmi di risoluzione dei problemi.md",
+    "PLI",
+    "PL"
+  ]
+}
