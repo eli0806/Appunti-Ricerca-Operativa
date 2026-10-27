@@ -15,6 +15,7 @@ $P \cap \mathbb{Z}^n=S$ è **la regione ammissibile del problema generico (P) di
 
 - L'ottimo di un problema di PLI **non si ottiene** dall'ottimo del corrispettivo problema PL arrotondato.
 - L'ottimo di un problema di PLI **non sempre** corrisponde ad un punto vicino all'ottimo (osservando il poliedro)
+- Approssimare un problema di PL, non ha senso. Per un problema di PLI invece è normale
 # Gestione dei problemi di minimo 
 $$V_I=V_{PL} \leq \begin{cases} min~C^Tx \\ Ax \leq b \\ x \in \mathbb{Z}^n \end{cases} \leq C^T\overline{x}=V_s$$
 # Ottimo PL a componenti interi

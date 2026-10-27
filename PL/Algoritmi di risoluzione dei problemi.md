@@ -46,4 +46,5 @@ L'algoritmo è **totalmente analogo a quello del simplesso primale** [[#L'algori
 	  Ossia si calcola l'indice **entrante** :$$k=min\{i\in N :b_i-A_i\overline{x}<0\}$$ che è il minimo tra le soluzioni di base trovate.
 4) Calcolare la quantità $$A_kW^i~\forall i\in N$$Dove A è la matrice formata dagli indici di base e $W=-A_B^{-1}$ .
 	   1) Se il prodotto dovesse risultare $\geq 0$ allora significherebbe che Il **valore ottimo del duale** sarebbe +$\infty$ e **il primale è** $\emptyset$ 
-	 2) Se il prodotto fosse negativo, allora sarebbe necessario calcolare **l'indice entrante**$$h=min\begin{cases}\frac{\overline{y_i}}{-A_kW^i} \end{cases}$$==Nota:== Questo rapporto **non può essere mai negativo**, 
+	 2) Se il prodotto fosse negativo, allora sarebbe necessario calcolare **l'indice entrante**$$h=min\begin{cases}-\frac{\overline{y_i}}{A_kW^i} \end{cases}$$==Nota:== Questo rapporto **non può essere mai negativo**, 
+

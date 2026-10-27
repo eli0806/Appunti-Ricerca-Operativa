@@ -72,7 +72,7 @@ Dove $\{a \}$ è la parte frazionaria ed è composta da **soli numeri positivi**
 	- Calcolo dei vertici $\to$ 3 di questi sono banali ( per trovare l'intersezione basta **invertire la matrice**)
 2) Si porta il problema in **forma duale standard** ([[PL/Altre cose importanti#I poliedri in forma duale standard|Forma duale standard)]] 
 3) Si sceglie una base e si calcolano **gli indici non di base**
-4) Si applica (([[PLI/Teoremi#3) Teorema dei piani di taglio di Gomery|Il teorema dei piani di taglio di Gomery))
+4) Si applica (([[PLI/Teoremi#3) Teorema dei piani di taglio di Gomery|Il teorema dei piani di taglio di Gomery))]] 
 
 ## Risoluzione del problema T.S.P
 E' necessario ricavare : 
@@ -121,3 +121,66 @@ Per aver il $V_s$ migliore, ogni volta che l'idea è soddisfatta **posso tagliar
 1) $P_{ij}=\emptyset$ ossia **vedere se il poliedro si è svuotato**
 2) $V_I(P_{ij})\geq V_{s}(P)$ 
 3) $V_{I}(P_{ij})<V_{s} (P)$ $\to$ In questo caso ad essere tagliato non è $V_I$ , piuttosto sostituisce il $V_s$ trovato $\implies V_{s}(P)=V_{I}(P_{ij})$
+
+# Il Branch and Bound per problemi di massimo
+
+Come nel caso del [[#Il Branch and Bound| Branch and bound "classico"]] , anche qui abbiamo la necessita di determinare un valore $V_I$ e un valore $V_s$ e si ottengono nei seguenti modi: 
+
+- $V_I$ : Calcolando la **miglior soluzione ammissibile** 
+- $V_s$ : E' ottenibile attraverso l'eliminazione dei vincoli.
+
+==Nota:== Solitamente la $V_s$ viene trovata attraverso la risoluzione del **rilassato continuo** , ma ciò non è possibile per i problemi di [[PLI/Problemi#2) Il problema del T.S.P(S) (Travelling Sailsman Problem)|T.S.P]].
+
+Trattata la fase di "Bound", ossia di definizione dei limiti dell'algoritmo , è necessario trattare quella di "Branch", ossia 
+## Le regole di taglio :
+1) $p_{ij}=\emptyset \to$ Perchè dopo aver raggiunto un determinato livello non sarà più possibile trovare soluzioni ammissibili $\to$ C'è un vincolo che è stato **definitivamente** violato 
+   Insomma non è possibile ==🔴disinstanziare variabili==
+2) $V_s(P_{ij})\leq V_{I(P)}$
+3) $V_s(P_{ij})>V_{I}(P) \to$ Ossia la **soluzione ottima del** [[PLI/Definizioni#1) Problema di PL rilassato|Rilassato continuo]]
+
+==Nota:== E' necessario calcolare $V_s$ ad ogni passo , permettendo così una "riduzione" del valore del massimo
+
+
+# Risoluzione del [[PLI/Problemi#3) Il problema di copertura(di costo minimo) o problema di covering|problema di copertura]]
+Il problema di copertura, così come il resto dei problemi di PLI si risolve attraverso la determinazione di una valutazione inferiore ($V_I$) e di una valutazione inferiore ($V_s$), procedendo poi con l'applicazione del [[#Il Branch and Bound| Branch and Bound]] .
+
+==🟡Nota:== Esisterebbe un algoritmo migliore del Branch and Bound , che sarebbe il Branch and cut, che mescola la metodologia del Branch and Bound con quella dei piani di taglio di Gomory.
+
+In questo caso abbiamo che :$$V_{I}=Rilassato~continuo*\\V _{S}=Soluzione~ammissibile~del~problema~P$$
+$*$ Il rilassato continuo in questo caso corrisponde al "linprog" del problema.
+## Calcolo della $V_s$ (Generico)
+1) Contare il numero di 1 presente per ogni colonna 
+2) Considerare ed eliminare la colonna con il maggior numero di 1 (dopo averne posto la corrispettiva variabile a 1).
+3) Cancellare le righe che hanno 1 in quella determinata colonna
+
+==Nota:== E' possibile arricchire l'algoritmo attraverso l'aggiunta di costi e regole di riduzione.
+
+
+## L'algoritmo di Chvatal  (Calcolo della $V_s$)
+E' l'algoritmo "più **greedy**" in assoluto e sfrutta i rendimenti. 
+1) Costruire il vettore dei rendimenti, che corrisponde a :$$r=(\frac{c_{i}}{\#_{1}i}~o\frac{\#_{1}i}{c_{i}} )$$
+   Dove $\#_{i}$ è il **numero relativo alla colonna i** .
+   ==Nota:== Le due notazioni scritte sopra sono totalmente indifferenti, tranne per il fatto che **è necessario considerare il massimo** se si scegliesse la prima, e il **minimo** se si scegliesse la seconda.
+
+# Risoluzione dei problemi di tipo [[PLI/Problemi#4) Il problema del "Bin Packing"|Bin packin]] 
+$V_I=Soluzione~ottima~del~rilassato~continuo \\ V_{s}=soluzione~ammissibile$
+
+Ma come trovo la soluzione ammissibile? 
+Ho a disposizione 3 metodi: 
+1) **Next fit decreasing:**
+	1) Ordinare i valori in ordine **decrescente**
+	2) Aprire un primo "bin" e inserire il primo oggetto 
+	3) Se il valore del secondo oggetto sfora il limite del bin, allora è necessario aprire un secondo bin, altrimenti si inserisce l'oggetto nel primo bin.
+	4) Ripetere fin quando non si termina di collocare gli oggetti.
+2) **First bin decreasing:** 
+	   1) Ordinare i valori in ordine **decrescente**
+	2) Ogni volta che si considera un oggetto inserirlo nel **primo bin possibile** , talora non potesse accadere è necessario aggiungere **un nuovo bin**.
+	==Nota:== Questo metodo permette **di avere uno sfido(ossia spazio libero rimanente) più equilibrato**.
+3) **Best fit decreasing:**
+	   1) Ordinare i valori in ordine **decrescente**.
+	   2) Ogni volta che si considera un oggetto, inseriro nel **bin che permette di lasciare il minor sfrido possibile**. 
+	==Nota:== In questo modo **riempiamo il più possibile i bin**.
+
+E invece la $V_I$ come si calcola? 
+
+La $V_I$ si calcola attraverso il rapporto tra **la sommatoria di tutti gli oggetti** e **la capacità dei bin** ossia:$$\frac{\sum_{i=i}^{n} w_{i}}{C} $$Si considera l'arrotondamento **per eccesso** al fine di definire **il valore ottimo del rilassato continuo**. 
